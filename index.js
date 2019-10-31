@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
@@ -16,6 +16,6 @@ const friends = [
 app.get('/api/friends', (req,res,next) => {
     res.json(friends);
 })
-app.listen(process.env.PORT || port, () => {
-    console.log(`listening on http://localhost:${(process.env.PORT || port)}`)
+app.listen(port, () => {
+    console.log(`listening on http://localhost:${port}`)
 } )
