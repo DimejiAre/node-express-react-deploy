@@ -16,7 +16,11 @@ const friends = [
     {id: 3, name: 'Brenda'}
 ]
 
-app.get('/api/friends', (req,res,next) => {
+app.get('/', (req,res) => {
+    res.sendFile(__dirname + '/client/build/index.html')
+})
+
+app.get('/api/friends', (req,res) => {
     res.json(friends);
 })
 app.listen(port, () => {
