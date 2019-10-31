@@ -6,6 +6,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT;
 
+app.use(express.static(__dirname + '/client/build'));
 app.use(cors());
 app.use(express.json());
 
